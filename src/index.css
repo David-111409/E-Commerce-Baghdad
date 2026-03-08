@@ -21,6 +21,7 @@ body {
   font-family: "Noto Kufi Arabic", sans-serif;
   background-color: var(--main-color);
   direction: rtl;
+  height: 1000px;
 }
 
 input:focus,

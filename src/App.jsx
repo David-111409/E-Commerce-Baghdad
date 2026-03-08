@@ -1,5 +1,5 @@
+import "bootstrap-icons/font/bootstrap-icons.css";
 import Header from "./components/header/Header";
-
 const App = () => {
   return <Header />;
 };

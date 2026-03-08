@@ -1,0 +1,36 @@
+header {
+  height: 250px;
+  width: 100%;
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+/* Top Header */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background-color: var(--secondary-color);
+  height: 20%;
+  color: var(--main-color);
+}
+
+.top-header-logo {
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  gap: 4px;
+}
+
+.top-header-text {
+  font-size: 21px;
+  font-weight: bold;
+  color: var(--warning-color);
+}
+
+.top-header-phone {
+  font-size: 24px;
+  font-weight: 500;
+}
