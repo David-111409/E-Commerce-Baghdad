@@ -72,7 +72,8 @@ header {
 }
 
 .middle-header-search-box input {
-  flex: 1;
+  flex-grow: 1;
+  min-width: 0;
   height: 100%;
   border: none;
   font-size: 21px;
@@ -87,6 +88,7 @@ header {
   background-color: var(--success-color);
   color: var(--white-color);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .middle-header-shopping-cart {
@@ -129,6 +131,7 @@ header {
 }
 
 @media (max-width: 920px) {
+
   .top-header-menu {
     display: block;
   }

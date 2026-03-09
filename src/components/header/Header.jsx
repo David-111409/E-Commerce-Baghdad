@@ -5,7 +5,17 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const navRef = useRef(null);
   const closeLink = (e) => e.target.classList.contains("navbar-link") && setOpen(false);
+
+  const openMenu = () => {
+    setOpen(true);
+  };
+
   useEffect(() => {
+    if (open) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target) && open) setOpen(false);
     };
@@ -23,7 +33,7 @@ const Header = () => {
         <i className="bi bi-person-fill"></i>
       </Link>
       <div className="top-header container">
-        <div className="top-header-menu" onClick={() => setOpen(true)}>
+        <div className="top-header-menu" onClick={openMenu}>
           <i className="bi bi-list"></i>
         </div>
 
