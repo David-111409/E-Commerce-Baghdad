@@ -72,7 +72,7 @@ header {
 }
 
 .middle-header-search-box input {
-  width: 100%;
+  flex: 1;
   height: 100%;
   border: none;
   font-size: 21px;
