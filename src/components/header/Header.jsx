@@ -1,8 +1,21 @@
 import { Link } from "react-router-dom";
 import "./header.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const navRef = useRef(null);
+  const closeLink = (e) => e.target.classList.contains("navbar-link") && setOpen(false);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target) && open) setOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
   return (
     <header>
       <Link to={"/login"} className="header-login">
@@ -38,17 +51,19 @@ const Header = () => {
           <i className="bi bi-cart3"></i>
         </Link>
       </div>
-      <nav className={`navbar ${open ? "open" : ""}  container`}>
+      <nav className={`navbar ${open ? "open" : ""}  container`} ref={navRef}>
         <div onClick={() => setOpen(false)} className="navbar-close-icon">
           <i className="bi bi-x-lg"></i>
         </div>
-        <div className="navbar-links">
+        <div className="navbar-links" onClick={closeLink}>
           <Link to="/" className="navbar-link">
             الصفحه الرئیسیه
           </Link>
+
           <Link to="/products" className="navbar-link">
             الإلكترونيات و الموبايلات
           </Link>
+
           <Link className="navbar-link">المنزل و المطبخ</Link>
           <Link className="navbar-link">رجاليه</Link>
           <Link className="navbar-link">نسائیه</Link>
