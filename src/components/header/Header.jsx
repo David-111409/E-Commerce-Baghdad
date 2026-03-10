@@ -21,6 +21,7 @@ const Header = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [open]);
+
   return (
     <header>
       <Link to={"/login"} className="header-login">
@@ -37,7 +38,7 @@ const Header = () => {
           بغداد شاب
         </Link>
 
-        <div className="top-header-text">اهلا و سهلا بكم</div>
+        <div className="top-header-text">أهلاً و سهلاً بكم</div>
 
         <div className="top-header-phone">
           123-456-789
