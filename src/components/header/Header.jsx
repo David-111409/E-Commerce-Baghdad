@@ -11,11 +11,6 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (open) {
-      document.body.classList.add("menu-open");
-    } else {
-      document.body.classList.remove("menu-open");
-    }
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target) && open) setOpen(false);
     };
