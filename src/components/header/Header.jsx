@@ -57,8 +57,9 @@ const Header = () => {
         </div>
 
         <Link to="/cart" className="middle-header-shopping-cart">
-          سله التسوق
+          سلة التسوق
           <i className="bi bi-cart3"></i>
+          <div className="cart-notification">1</div>
         </Link>
       </div>
       <nav className={`navbar ${open ? "open" : ""}  container`} ref={navRef}>

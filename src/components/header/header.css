@@ -98,6 +98,20 @@ header {
   display: flex;
   gap: 10px;
   align-items: baseline;
+  position: relative;
+}
+.cart-notification {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-red-color);
 }
 
 .middle-header-shopping-cart .bi-cart3 {
@@ -112,7 +126,7 @@ header {
 }
 .navbar-links {
   display: flex;
-  gap: 30px;
+  gap: 40px;
 }
 .navbar-link {
   color: var(--white-color);
@@ -131,7 +145,6 @@ header {
 }
 
 @media (max-width: 920px) {
-
   .top-header-menu {
     display: block;
   }
@@ -159,7 +172,7 @@ header {
     justify-content: flex-start;
     flex-direction: column;
     z-index: 99;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
 
   .navbar.open {

@@ -44,6 +44,5 @@ a {
 @media (max-width: 920px) {
   body.menu-open {
     background-color: rgba(0, 0, 0, 0.5); /* gray overlay effect */
-    overflow: hidden;
   }
 }
