@@ -52,8 +52,14 @@
 .footer-item-link {
   margin-bottom: 5px;
   font-size: 17px;
-  cursor: pointer;
+
   color: var(--gray-color);
+}
+
+.footer-item-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
 }
 
 /* Footer Bottom */
@@ -93,6 +99,7 @@
   .footer-items-wrapper {
     padding: 15px;
   }
+
   .footer-items-wrapper {
     grid-template-columns: 1fr;
   }

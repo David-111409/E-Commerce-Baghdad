@@ -11,3 +11,7 @@
 .special-offers-icon-wrapper i {
   margin: 0 5px;
 }
+
+.special-offers-icon-wrapper .text {
+  color: var(--strong-red-color);
+}
