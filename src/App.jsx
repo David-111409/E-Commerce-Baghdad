@@ -4,21 +4,22 @@ import { ToastContainer } from "react-toastify";
 import Header from "./components/header/Header";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/cart/Cart";
-import Banner from "./components/banner/Banner";
-import Category from "./components/category/Category";
-import SpecialOffers from "./components/special-offers/SpecialOffers";
 import Login from "./pages/forms/login";
+import Home from "./pages/home/Home";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   return (
     <>
       <ToastContainer position="top-center" autoClose={1800} hideProgressBar={true} />
       <Header />
-     
+
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer />
     </>
   );
 };
