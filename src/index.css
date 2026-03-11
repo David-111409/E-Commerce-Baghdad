@@ -21,7 +21,6 @@
 body {
   background-color: var(--main-color);
   direction: rtl;
-  height: 1000px;
 }
 
 input:focus,

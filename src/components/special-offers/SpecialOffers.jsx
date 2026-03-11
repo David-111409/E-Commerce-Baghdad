@@ -4,9 +4,10 @@ const SpecialOffers = () => {
   return (
     <div className="special-offers">
       <h1 className="special-offers-title">
-        عروض کبیره للیوم{" "}
+        عروض کبیره للیوم
         <span className="special-offers-icon-wrapper">
-          <i className="bi bi-stopwatch"></i> ل 24 ساعه بس
+          <i className="bi bi-stopwatch"></i>
+          <span>ل 24 ساعة بس</span>
         </span>
       </h1>
     </div>
