@@ -1,0 +1,11 @@
+.special-offers {
+  padding: 10px 30px;
+}
+
+.special-offers-title {
+  font-size: 21px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+
