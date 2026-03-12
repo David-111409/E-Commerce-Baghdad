@@ -3,11 +3,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 2%;
   padding: 10px 30px;
+
 }
 
 .header-banner-img {
   height: 300px;
   width: 100%;
+  border-radius: 10px;
 }
 
 @media (max-width: 920px) {
@@ -15,10 +17,7 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
-}
-
-@media (max-width: 720px) {
   .header-banner {
-    padding: 15px; /* Adjust padding for small screens */
+    padding: 15px;
   }
 }

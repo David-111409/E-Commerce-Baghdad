@@ -76,6 +76,10 @@
     grid-template-columns: repeat(2, 45%);
     row-gap: 20px;
   }
+  .footer-top,
+  .footer-items-wrapper {
+    padding: 15px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -95,10 +99,7 @@
 }
 
 @media (max-width: 520px) {
-  .footer-top,
-  .footer-items-wrapper {
-    padding: 15px;
-  }
+  
 
   .footer-items-wrapper {
     grid-template-columns: 1fr;

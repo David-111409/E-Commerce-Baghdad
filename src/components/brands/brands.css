@@ -23,13 +23,11 @@
   .brands-wrapper {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-@media (max-width: 720px) {
   .brands-wrapper {
     padding: 15px;
   }
 }
+
 
 @media (max-width: 520px) {
   .brands-wrapper {

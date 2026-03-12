@@ -110,14 +110,13 @@
   .offers {
     grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 520px) {
   .special-offers {
     padding: 15px;
   }
+}
 
- .offer .offer-title {
+@media (max-width: 520px) {
+  .offer .offer-title {
     font-size: 17px;
     margin-top: 30px;
   }
