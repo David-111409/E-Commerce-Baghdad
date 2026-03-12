@@ -11,7 +11,7 @@ import Footer from "./components/footer/Footer";
 const App = () => {
   return (
     <>
-      <ToastContainer position="top-center" autoClose={1800} hideProgressBar={true} />
+      <ToastContainer  autoClose={1800} hideProgressBar={true} />
       <Header />
 
       <Routes>

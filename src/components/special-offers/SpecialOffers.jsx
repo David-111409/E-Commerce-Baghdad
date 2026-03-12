@@ -1,4 +1,6 @@
 import "./special-offers.css";
+import { specialOffers } from "../../data/special-offers";
+import Offer from "./Offer";
 
 const SpecialOffers = () => {
   return (
@@ -10,6 +12,11 @@ const SpecialOffers = () => {
           <span className="text">ل 24 ساعة بس</span>
         </span>
       </h1>
+      <div className="offers">
+        {specialOffers.map((offer) => (
+          <Offer offer={offer} key={offer.id} />
+        ))}
+      </div>
     </div>
   );
 };
