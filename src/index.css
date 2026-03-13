@@ -11,6 +11,19 @@
   --white-color: #fff;
 }
 
+body.dark-theme {
+  --main-color: #1e1e1e;
+  --primary-color: #ecf0f1;
+  --secondary-color: #bdc3c7;
+  --light-red-color: #ff6b6b;
+  --strong-red-color: #e63946;
+  --warning-color: #f1c40f;
+  --success-color: #2ecc71;
+  --info-color: #3498db;
+  --gray-color: #aaaaaa;
+  --white-color: #f8f9fa;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -39,4 +52,3 @@ button:disabled {
 a {
   text-decoration: none;
 }
-

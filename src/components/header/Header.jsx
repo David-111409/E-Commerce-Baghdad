@@ -4,11 +4,18 @@ import { useState, useEffect, useRef } from "react";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const navRef = useRef(null);
+  const [isDark, setIsDark] = useState(false);
+
   const closeLink = (e) => e.target.classList.contains("navbar-link") && setOpen(false);
 
   const openMenu = () => {
     setOpen(true);
   };
+
+  function toggleTheme() {
+    document.body.classList.toggle("dark-theme");
+    setIsDark(!isDark);
+  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -34,6 +41,17 @@ const Header = () => {
         </div>
 
         <Link to={"/"} className="top-header-logo">
+          <button onClick={toggleTheme} className="theme-toggle">
+            {isDark ? (
+              <>
+                <i className="bi bi-sun-fill"></i> الوضع الفاتح
+              </>
+            ) : (
+              <>
+                <i className="bi bi-moon-fill"></i> الوضع الداكن
+              </>
+            )}
+          </button>
           <i className="bi bi-basket2"></i>
           بغداد شاب
         </Link>

@@ -71,6 +71,11 @@
   font-size: 17px;
 }
 
+body.dark-theme .footer-bottom {
+  background-color: #121212;
+  color: var(--white-color);
+}
+
 @media (max-width: 920px) {
   .footer-items-wrapper {
     grid-template-columns: repeat(2, 45%);
@@ -99,8 +104,6 @@
 }
 
 @media (max-width: 520px) {
-  
-
   .footer-items-wrapper {
     grid-template-columns: 1fr;
   }

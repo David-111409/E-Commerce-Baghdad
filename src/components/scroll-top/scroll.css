@@ -6,7 +6,7 @@
   height: 50px;
   border: none;
   border-radius: 50%;
-  background-color: var(--primary-color); 
+  background-color: var(--primary-color);
   color: var(--white-color);
   font-size: 22px;
   font-weight: bold;
@@ -15,10 +15,14 @@
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .scroll-to-top:hover {
-  background-color: var(--info-color); 
-  transform: scale(1.1); 
+  transform: scale(1.1);
+}
+
+body.dark-theme .scroll-to-top {
+  background-color: #fff;
+  color: #121212;
 }

@@ -8,6 +8,9 @@ header {
   position: relative;
 }
 
+body.dark-theme header {
+  background-color: #121212;
+}
 .header-login {
   color: var(--warning-color);
   font-size: 21px;
@@ -18,6 +21,7 @@ header {
   display: flex;
   gap: 4px;
 }
+
 /* Top Header */
 .top-header {
   display: flex;
@@ -27,7 +31,10 @@ header {
   height: 20%;
   color: var(--main-color);
 }
-
+body.dark-theme .top-header {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
 .top-header-logo {
   font-size: 24px;
   font-weight: 500;
@@ -54,6 +61,42 @@ header {
   display: none;
 }
 
+.theme-toggle {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 30px; /* rounded pill shape */
+  padding: 4px 9px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle i {
+  font-size: 20px;
+}
+
+/* Hover effect */
+.theme-toggle:hover {
+  background-color: var(--info-color);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode overrides */
+body.dark-theme .theme-toggle {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .theme-toggle:hover {
+  background-color: var(--success-color);
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0.12);
+}
 /* Middle Header */
 .middle-header {
   display: flex;
@@ -123,6 +166,10 @@ header {
   height: 30%;
   display: flex;
   align-items: center;
+}
+body.dark-theme .navbar {
+  background-color: #121212;
+  color: var(--white-color);
 }
 .navbar-links {
   display: flex;
