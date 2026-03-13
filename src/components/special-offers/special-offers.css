@@ -20,8 +20,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  column-gap: 2%;
-  row-gap: 25px;
+  gap: 25px 2%;
 }
 
 .offer {
@@ -33,12 +32,11 @@
   border-radius: 10px;
   position: relative;
   padding: 5px;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .offer:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
 }
 
 .offer-image-wrapper {
@@ -55,7 +53,7 @@
 
 .offer .offer-title {
   color: var(--primary-color);
-  font-size: 21px;
+  font-size: 1.3rem;
   margin: 15px 0;
 }
 
@@ -116,11 +114,13 @@
 
 .offer-see-more:hover {
   background-color: var(--info-color);
+
 }
 
 @media (max-width: 920px) {
   .offers {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   .special-offers {
     padding: 15px;
@@ -128,6 +128,9 @@
 }
 
 @media (max-width: 520px) {
+  .offers {
+    gap: 10px;
+  }
   .offer .offer-title {
     font-size: 17px;
     margin-top: 30px;

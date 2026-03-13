@@ -48,5 +48,6 @@
 @media (max-width: 520px) {
   .categories {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
