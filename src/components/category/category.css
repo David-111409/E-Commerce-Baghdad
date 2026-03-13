@@ -17,8 +17,12 @@
   background-color: var(--white-color);
   border-radius: 10px;
   padding: 5px;
+  transition: all .3s ease;
 }
-
+.category-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 .category-item-img {
   height: 100px;
   object-fit: contain;

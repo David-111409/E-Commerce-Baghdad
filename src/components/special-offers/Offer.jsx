@@ -4,12 +4,17 @@ import { Link } from "react-router-dom";
 
 const Offer = ({ offer }) => {
   const [image, setImage] = useState(offer.firstImage);
-  
+
   return (
     <div className="offer">
-      <div className="offer-image-wrapper" onMouseEnter={() => setImage(offer.secondImage)} onMouseLeave={() => setImage(offer.firstImage)}>
-        <img className="offer-image" src={image} />
-      </div>
+      <Link
+        to={`/special-offers/${offer.id}`}
+        className="offer-image-wrapper"
+        onMouseEnter={() => setImage(offer.secondImage)}
+        onMouseLeave={() => setImage(offer.firstImage)}
+      >
+        <img className="offer-image" src={image} title={offer.title} />
+      </Link>
       <div className="offer-info">
         <h5 className="offer-title">{offer.title}</h5>
         <div className="rating-wrapper">
