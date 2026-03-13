@@ -4,18 +4,22 @@ import { useState, useEffect, useRef } from "react";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const navRef = useRef(null);
-  const [isDark, setIsDark] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const closeLink = (e) => e.target.classList.contains("navbar-link") && setOpen(false);
 
-  const openMenu = () => {
-    setOpen(true);
-  };
+  const openMenu = () => setOpen(true);
 
-  function toggleTheme() {
-    document.body.classList.toggle("dark-theme");
-    setIsDark(!isDark);
-  }
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.body.classList.add("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -41,27 +45,22 @@ const Header = () => {
         </div>
 
         <Link to={"/"} className="top-header-logo">
-          <button onClick={toggleTheme} className="theme-toggle">
-            {isDark ? (
-              <>
-                <i className="bi bi-sun-fill"></i> الوضع الفاتح
-              </>
-            ) : (
-              <>
-                <i className="bi bi-moon-fill"></i> الوضع الداكن
-              </>
-            )}
-          </button>
           <i className="bi bi-basket2"></i>
           بغداد شاب
         </Link>
 
         <div className="top-header-text">أهلاً و سهلاً بكم</div>
-
-        <div className="top-header-phone">
-          123-456-789
-          <i className="bi bi-telephone"></i>
-        </div>
+        <button onClick={toggleTheme} className="theme-toggle">
+          {theme === "dark" ? (
+            <>
+              <i className="bi bi-sun-fill"></i> الوضع الفاتح
+            </>
+          ) : (
+            <>
+              <i className="bi bi-moon-fill"></i> الوضع الداكن
+            </>
+          )}
+        </button>
       </div>
 
       <div className="middle-header container">

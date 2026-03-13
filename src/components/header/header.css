@@ -11,6 +11,7 @@ header {
 body.dark-theme header {
   background-color: #121212;
 }
+
 .header-login {
   color: var(--warning-color);
   font-size: 21px;
@@ -50,10 +51,7 @@ body.dark-theme .top-header {
   color: var(--warning-color);
 }
 
-.top-header-phone {
-  font-size: 24px;
-  font-weight: 500;
-}
+
 
 .top-header-menu {
   font-size: 40px;
@@ -107,13 +105,16 @@ body.dark-theme .theme-toggle:hover {
 
 .middle-header-search-box {
   width: 70%;
-  background-color: var(--white-color);
   height: 60px;
   border-radius: 7px;
   display: flex;
   overflow: hidden;
 }
 
+body.dark-theme .middle-header-search-box input  {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
 .middle-header-search-box input {
   flex-grow: 1;
   min-width: 0;
@@ -244,9 +245,7 @@ body.dark-theme .navbar {
     padding: 0 15px;
   }
 
-  .top-header-phone {
-    display: none;
-  }
+
 
   .header-login {
     top: 180px;
