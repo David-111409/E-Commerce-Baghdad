@@ -52,13 +52,9 @@ const Header = () => {
         <div className="top-header-text">أهلاً و سهلاً بكم</div>
         <button onClick={toggleTheme} className="theme-toggle">
           {theme === "dark" ? (
-            
-              <i className="bi bi-sun-fill"></i>
-            
+            <i className="bi bi-sun-fill"></i>
           ) : (
-            
-              <i className="bi bi-moon-fill"></i> 
-            
+            <i className="bi bi-moon-fill"></i>
           )}
         </button>
       </div>
