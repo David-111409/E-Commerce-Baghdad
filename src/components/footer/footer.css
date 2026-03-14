@@ -7,10 +7,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
-  border-top: 1px solid rgb(202, 196, 196);
-  border-bottom: 1px solid rgb(202, 196, 196);
+  border-top: 1px solid ;
+  border-bottom: 1px solid ;
+  border-color: rgb(202, 196, 196);
 }
 
+body.dark-theme .footer-top {
+  border-color: white;
+}
 .footer-top-title {
   color: var(--primary-color);
   font-size: 21px;
