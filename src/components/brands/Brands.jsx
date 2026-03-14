@@ -6,7 +6,7 @@ const Brands = () => {
     <div className="brands-wrapper">
       {brands.map((brand) => (
         <div key={brand.id} className="brand">
-          <i class="bi bi-check-circle"></i>
+          <i className="bi bi-check-circle"></i>
           <img src={brand.image} alt={`brand : ${brand.id} image`} className="brand-image" />
         </div>
       ))}

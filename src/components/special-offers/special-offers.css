@@ -40,7 +40,7 @@
 }
 
 .offer-image-wrapper {
-  flex-basis: 40%;
+  flex-basis: 30%;
   height: 100%;
 }
 
@@ -132,16 +132,15 @@ body.dark-theme .offer {
 }
 
 body.dark-theme .offer:hover {
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08); /* soft glow instead of dark shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* soft glow instead of dark shadow */
 }
 
 body.dark-theme .offer .offer-title {
   color: var(--white-color);
 }
-body.dark-theme .offer .offer-image-wrapper{
+body.dark-theme .offer .offer-image-wrapper {
   flex-basis: 30%;
   height: fit-content;
-
 }
 body.dark-theme .offer-final-price-item {
   color: var(--success-color); /* highlight final price */
