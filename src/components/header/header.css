@@ -61,14 +61,15 @@ body.dark-theme .top-header {
 }
 
 .theme-toggle {
-  background-color: #000;
+  background-color: transparent;
   color: var(--white-color);
   border: none;
-  border-radius: 50%; 
-  width: 45px;
-  height: 45px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(22, 22, 22, 0.6);
 }
 
 .theme-toggle i {
@@ -83,7 +84,7 @@ body.dark-theme .top-header {
 
 /* Dark mode overrides */
 body.dark-theme .theme-toggle {
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
   color: var(--white-color);
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.08);
 }
@@ -109,7 +110,7 @@ body.dark-theme .theme-toggle:hover {
   overflow: hidden;
 }
 
-body.dark-theme .middle-header-search-box input  {
+body.dark-theme .middle-header-search-box input {
   background-color: var(--main-color);
   color: var(--white-color);
 }
@@ -142,6 +143,7 @@ body.dark-theme .middle-header-search-box input  {
   gap: 10px;
   align-items: baseline;
   position: relative;
+  border-bottom: 1px solid gray;
 }
 
 .cart-notification {
@@ -162,6 +164,9 @@ body.dark-theme .middle-header-search-box input  {
   font-size: 32px;
 }
 
+body.dark-theme .middle-header-shopping-cart {
+  border-bottom: 1px solid white;
+}
 /* Navbar */
 .navbar {
   height: 30%;
