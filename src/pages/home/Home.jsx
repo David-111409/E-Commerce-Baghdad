@@ -5,10 +5,25 @@ import Heading from "../../components/heading-title/Heading";
 import ScrollToTop from "../../components/scroll-top/scrollTop";
 import Slider from "../../components/slider/Slider";
 import SpecialOffers from "../../components/special-offers/SpecialOffers";
-import { products } from "../../data/products";
+import { useState, useEffect } from "react";
 const Home = () => {
-  const laptops = products.filter((pro) => pro.isLaptop);
-  const mobiles = products.filter((pro) => !pro.isLaptop);
+  const [products, setProducts] = useState([]);
+  
+
+  useEffect(() => {
+    fetch("https://69b7299effbcd0286094a939.mockapi.io/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+        
+      })
+      .catch((err) => {
+        console.error("خطأ في جلب البيانات:", err);
+        
+      });
+  }, []);
+  const laptops = products.filter((pro) => pro.category === "laptops");
+  const mobiles = products.filter((pro) => pro.category === "mobiles");
 
   return (
     <>
@@ -20,7 +35,6 @@ const Home = () => {
       <Slider data={laptops} />
       <Heading title="الجدید من الجوالات" />
       <Slider data={mobiles} />
-
       <Heading title="تسوق حسب المارک" />
       <Brands />
     </>

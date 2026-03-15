@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./slider.css";
 import Rating from "../special-offers/Rating";
