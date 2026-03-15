@@ -120,20 +120,20 @@
 
 /* Dark Theme Overrides */
 body.dark-theme .special-offers-title {
-  color: var(--white-color); /* make title readable */
+  color: var(--white-color);
 }
 
 body.dark-theme .special-offers-icon-wrapper .text {
-  color: var(--light-red-color); /* keep accent visible */
+  color: var(--light-red-color);
 }
 
 body.dark-theme .offer {
-  background-color: var(--main-color); /* dark card background */
-  border: 1px solid rgba(255, 255, 255, 0.05); /* subtle border for separation */
+  background-color: var(--main-color);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 body.dark-theme .offer:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* soft glow instead of dark shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 body.dark-theme .offer .offer-title {
@@ -150,7 +150,7 @@ body.dark-theme .offer-price-item {
 
 body.dark-theme .offer .discount {
   background-color: var(--warning-color);
-  color: var(--primary-color); /* dark text inside badge */
+  color: var(--primary-color);
 }
 
 body.dark-theme .offer-see-more {
@@ -162,7 +162,6 @@ body.dark-theme .offer-see-more:hover {
   background-color: var(--info-color);
 }
 @media (max-width: 920px) {
- 
   .offers {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -172,10 +171,11 @@ body.dark-theme .offer-see-more:hover {
   }
 }
 
-@media (max-width: 720px){
-  .offer{
+@media (max-width: 720px) {
+  .offer {
     justify-content: space-between;
   }
+
 }
 @media (max-width: 520px) {
   .offers {

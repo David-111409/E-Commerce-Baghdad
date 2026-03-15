@@ -1,0 +1,12 @@
+.product-description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--gray-color);
+  padding: 30px;
+}
+
+.product-description-title {
+  font-size: 25px;
+  color: var(--primary-color);
+  display: block;
+}

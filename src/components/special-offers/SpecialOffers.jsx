@@ -1,7 +1,7 @@
 import "./special-offers.css";
 import { specialOffers } from "../../data/special-offers";
 import Offer from "./Offer";
-
+import { Link } from "react-router-dom";
 const SpecialOffers = () => {
   return (
     <div className="special-offers">
@@ -14,7 +14,11 @@ const SpecialOffers = () => {
       </h1>
       <div className="offers">
         {specialOffers.map((offer) => (
-          <Offer offer={offer} key={offer.id} />
+          <Offer showDiscount={true} offer={offer} key={offer.id}>
+            <Link to={`/special-offers/${offer.id}`} className="offer-see-more">
+              شاهد المزید ...
+            </Link>
+          </Offer>
         ))}
       </div>
     </div>
