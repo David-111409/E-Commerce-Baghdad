@@ -4,35 +4,52 @@ import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import ProductDescription from "../single-product/Description";
 
-const Offer = ({ offer, children, showDiscount, images }) => {
+const Offer = ({ offer, children, showDiscount, type }) => {
   const [image, setImage] = useState(offer.firstImage);
   const [imageIndex, setImageIndex] = useState(0);
   const finalPrice = ((100 - offer.discount) * offer.price) / 100;
-  const imageWrapper = showDiscount ? (
-    <Link
-      to={`/special-offers/${offer.id}`}
-      className="offer-image-wrapper"
-      onMouseEnter={() => setImage(offer.secondImage)}
-      onMouseLeave={() => setImage(offer.firstImage)}
-    >
-      <img className={"offer-image"} src={image} title={offer.title} />
-    </Link>
-  ) : (
-    <div className={"special-offers-page-img-wrapper"}>
-      <img className={"special-offers-page-img"} src={images[imageIndex]} title={offer.title} />
-      <div className="special-offers-page-select">
-        {images.map((img, index) => (
-          <img
-            onClick={() => setImageIndex(index)}
-            className="select-img"
-            key={index}
-            src={img}
-            alt=""
-          />
-        ))}
-      </div>
+  let imageWrapper = (
+    <div className="offer-image-wrapper">
+      <img className={"offer-image"} src={offer.image} title={offer.title} />
     </div>
   );
+  if (!showDiscount && !type) {
+    imageWrapper = (
+      <div className={"special-offers-page-img-wrapper"}>
+        <img
+          className={"special-offers-page-img"}
+          src={offer.images[imageIndex]}
+          title={offer.title}
+        />
+        <div className="special-offers-page-select">
+          {offer.images.map((img, index) => (
+            <img
+              onClick={() => setImageIndex(index)}
+              className="select-img"
+              key={index}
+              src={img}
+              alt=""
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+  if (showDiscount && type !== "product") {
+    imageWrapper = (
+      <Link
+        to={`/special-offers/${offer.id}`}
+        className="offer-image-wrapper"
+        onMouseEnter={() => setImage(offer.secondImage)}
+        onMouseLeave={() => setImage(offer.firstImage)}
+      >
+        <img className={"offer-image"} src={image} title={offer.title} />
+      </Link>
+    );
+  }
+
+  console.log(imageWrapper);
+
   return (
     <>
       <div className={showDiscount ? "offer" : "special-offers-page"}>

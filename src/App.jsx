@@ -8,18 +8,22 @@ import Login from "./pages/forms/login";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
 import SingleOfferPage from "./components/special-offers/SingleOfferPage";
+import ScrollToTop from "./ScrollToTop";
+import SingleProduct from "./components/single-product/SingleProduct";
 
 const App = () => {
   return (
     <>
+      <ScrollToTop />
       <ToastContainer autoClose={1800} hideProgressBar={true} />
       <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path = "/special-offers/:id" element={<SingleOfferPage />} />
+        <Route path="/special-offers/:id" element={<SingleOfferPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
       </Routes>
       <Footer />
     </>

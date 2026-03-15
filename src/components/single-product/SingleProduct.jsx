@@ -1,20 +1,20 @@
-import "./single-offer.css";
+import { products } from "../../data/products";
+import Offer from "../special-offers/Offer";
 import { useParams } from "react-router-dom";
-import { specialOffers } from "../../data/special-offers";
-import Offer from "./Offer";
 import { useState } from "react";
 
-const SingleOfferPage = () => {
+const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
-  const offer = specialOffers.find((p) => p.id === +id);
-  
+  const offer = products.find((p) => p.id === +id);
+ 
+
   return (
-    <Offer offer={offer}>
+    <Offer offer={offer} type= "not-product" showDiscount={false} >
       <div className="special-offers-add-to-cart">
         <label htmlFor="cart-quantity">الكمية</label>
         <input
-        id="cart-quantity"
+          id="cart-quantity"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           type="number"
@@ -27,4 +27,4 @@ const SingleOfferPage = () => {
   );
 };
 
-export default SingleOfferPage;
+export default SingleProduct;

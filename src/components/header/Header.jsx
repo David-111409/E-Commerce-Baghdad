@@ -46,7 +46,7 @@ const Header = () => {
 
         <Link to={"/"} className="top-header-logo">
           <i className="bi bi-basket2"></i>
-          بغداد شاب
+          بغداد شوب
         </Link>
 
         <div className="top-header-text">أهلاً و سهلاً بكم</div>
