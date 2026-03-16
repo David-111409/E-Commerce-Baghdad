@@ -1,20 +1,23 @@
 import Offer from "../special-offers/Offer";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   const [product, setProduct] = useState({});
-
-  console.log(id);
+  const dispatch = useDispatch();
+  const handleAdd = (product) => {
+    console.log(product)
+    dispatch(addToCart(product));
+  }
   useEffect(() => {
     // نستخدم الـ id الممرر لجلب بيانات هذا المنتج فقط
     const fetchSingleProduct = async () => {
       try {
         const response = await fetch(`https://69b7299effbcd0286094a939.mockapi.io/products`);
         const data = await response.json();
-        console.log(data);
         setProduct(data[+id - 1]);
       } catch (error) {
         console.error("خطأ أثناء جلب المنتج:", error);
@@ -36,7 +39,9 @@ const SingleProduct = () => {
           min="1"
           max="10"
         />
-        <button className="add-to-cart-btn">إضافه الی سله التسوق</button>
+        <button onClick={() => handleAdd({...product, quantity})} className="add-to-cart-btn">
+          إضافه الی سله التسوق
+        </button>
       </div>
     </Offer>
   );

@@ -8,7 +8,7 @@ const Offer = ({ offer, children, showDiscount, type }) => {
   const [image, setImage] = useState(offer.firstImage);
   const [imageIndex, setImageIndex] = useState(0);
   const finalPrice = ((100 - offer.discount) * offer.price) / 100;
-
+ 
   let imageWrapper = (
     <div className="offer-image-wrapper">
       <img className={"offer-image"} src={offer.image} title={offer.title} />
@@ -50,7 +50,7 @@ const Offer = ({ offer, children, showDiscount, type }) => {
   }
 
  
-
+ console.log(offer)
   return (
     <>
       <div className={showDiscount ? "offer" : "special-offers-page"}>

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import "./header.css";
 import { useState, useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const navRef = useRef(null);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const closeLink = (e) => e.target.classList.contains("navbar-link") && setOpen(false);
 
   const openMenu = () => setOpen(true);
@@ -68,7 +69,7 @@ const Header = () => {
         <Link to="/cart" className="middle-header-shopping-cart">
           سلة التسوق
           <i className="bi bi-cart3"></i>
-          <div className="cart-notification">1</div>
+          {cartItems.length ? <div className="cart-notification">{cartItems.length}</div> : ""}
         </Link>
       </div>
       <nav className={`navbar ${open ? "open" : ""}  container`} ref={navRef}>
