@@ -62,15 +62,36 @@ const Products = () => {
         <div className="product-sort-box">
           <h4 className="product-sidebar-title">ترتیب حسب السعر</h4>
           <div className="form-group">
-            <input value={"nosort"} onChange={handleSort} type="radio" name="sort" id="noSort" />
+            <input
+              checked={sortItem === "nosort"}
+              value={"nosort"}
+              onChange={handleSort}
+              type="radio"
+              name="sort"
+              id="noSort"
+            />
             <label htmlFor="noSort">بدون ترتیب</label>
           </div>
           <div className="form-group">
-            <input type="radio" name="sort" id="low" value={"low"} onChange={handleSort} />
+            <input
+              checked={sortItem === "low"}
+              type="radio"
+              name="sort"
+              id="low"
+              value={"low"}
+              onChange={handleSort}
+            />
             <label htmlFor="low"> من الأقل الی الأعلی</label>
           </div>
           <div className="form-group">
-            <input type="radio" name="sort" id="high" value={"high"} onChange={handleSort} />
+            <input
+              checked={sortItem === "high"}
+              type="radio"
+              name="sort"
+              id="high"
+              value={"high"}
+              onChange={handleSort}
+            />
             <label htmlFor="high"> من الأعلی الی الأقل</label>
           </div>
         </div>
@@ -117,7 +138,6 @@ const Products = () => {
 
       <div className="product-wrapper">
         <div className="product-list">
-          {/* نستخدم currentProducts بدلاً من filteredAndSortedProducts */}
           {currentProducts?.map(({ id, title, image, reviews, price, rating }) => (
             <Link key={id} to={`/products/${id}`} className="product-item">
               <img src={image} alt={title} className="product-item-image" />
