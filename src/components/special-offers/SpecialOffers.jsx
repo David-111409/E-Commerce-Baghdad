@@ -13,7 +13,7 @@ const SpecialOffers = () => {
           <span className="text">ل 24 ساعة بس</span>
         </span>
       </h1>
-      <div className="offers">
+      <div className="offers" style = {{maxWidth: ""}}>
         {specialOffers.map((offer) => (
           <Offer showDiscount={true} offer={offer} key={offer.id}>
             <Link  to={`/special-offers/${offer.id}`} className="offer-see-more">

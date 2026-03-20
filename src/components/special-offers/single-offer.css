@@ -17,6 +17,11 @@
   border-left: 1px solid var(--main-color);
 }
 
+.offer-img-wrapper .offer-image{
+  max-width: 220px;
+  border-radius: 10px;
+}
+
 .special-offers-page-img {
   width: 280px;
   border-radius: 15px;
@@ -24,7 +29,8 @@
 }
 
 .special-offers-page-select {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: -170px;
 }
 
 .select-img {
@@ -39,6 +45,7 @@
 .special-offers-page-info {
   width: 50%;
   padding: 20px;
+
 }
 
 .special-offers-page-title {
@@ -87,6 +94,7 @@
   margin-top: 10px;
   transition: 0.3s ease-in all;
 }
+
 .add-to-cart-btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
@@ -116,6 +124,9 @@ body.dark-theme .special-offers-add-to-cart input {
 
 /* Media Queries */
 @media (max-width: 980px) {
+  .offer-img-wrapper .offer-image{
+    width: 200px;
+  }
   .special-offers-page {
     flex-direction: column;
     align-items: center;
@@ -162,8 +173,10 @@ body.dark-theme .special-offers-add-to-cart input {
 
   .special-offers-page-img-wrapper {
     flex-direction: column;
-    justify-content: flex-start;
     width: 100%;
+  }
+  .offer-img-wrapper .offer-image{
+    width: 150px;
   }
 
   .special-offers-page-select {
@@ -172,7 +185,7 @@ body.dark-theme .special-offers-add-to-cart input {
   }
 
   .special-offers-page-img {
-    width: 90%;
+    width: 65%;
   }
 
   .select-img {

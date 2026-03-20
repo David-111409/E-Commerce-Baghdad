@@ -5,79 +5,80 @@ import Rating from "./Rating";
 import ProductDescription from "../single-product/Description";
 
 const Offer = ({ offer, children, showDiscount, type }) => {
-  const [image, setImage] = useState(offer.firstImage);
   const [imageIndex, setImageIndex] = useState(0);
-  const finalPrice = ((100 - offer.discount) * offer.price) / 100;
- 
-  let imageWrapper = (
-    <div className="offer-image-wrapper">
-      <img className={"offer-image"} src={offer.image} title={offer.title} />
-    </div>
-  );
-  if (!showDiscount && !type) {
-    imageWrapper = (
-      <div className={"special-offers-page-img-wrapper"}>
-        <img
-          className={"special-offers-page-img"}
-          src={offer.images[imageIndex]}
-          title={offer.title}
-        />
-        <div className="special-offers-page-select">
-          {offer.images.map((img, index) => (
-            <img
-              onClick={() => setImageIndex(index)}
-              className="select-img"
-              key={index}
-              src={img}
-              alt=""
-            />
-          ))}
-        </div>
-      </div>
-    );
-  }
-  if (showDiscount && type !== "product") {
-    imageWrapper = (
-      <Link
-        to={`/special-offers/${offer.id}`}
-        className="offer-image-wrapper"
-        onMouseEnter={() => setImage(offer.secondImage)}
-        onMouseLeave={() => setImage(offer.firstImage)}
-      >
-        <img className={"offer-image"} src={image} title={offer.title} />
-      </Link>
-    );
-  }
 
- 
- console.log(offer)
+  // حماية الكود من الـ Undefined والحسابات الصحيحة
+  if (!offer || !offer.price) return null;
+
+  const finalPrice = offer.discount
+    ? (((100 - offer.discount) * offer.price) / 100).toFixed(2)
+    : offer.price;
+
+  // تحديد الكلاسات بناءً على الحالة لتقليل الزحمة في الـ return
+  const prefix = showDiscount ? "offer" : "special-offers-page";
+
+  // دالة لتحديد الصورة المعروضة
+  const currentImage =
+    showDiscount && type !== "product"
+      ? imageIndex === 0
+        ? offer.firstImage
+        : offer.secondImage
+      : offer.images
+        ? offer.images[imageIndex]
+        : offer.image;
+
   return (
     <>
-      <div className={showDiscount ? "offer" : "special-offers-page"}>
-        {imageWrapper}
-        <div className={showDiscount ? "offer-info" : "special-offers-page-info"}>
-          <h5 className={showDiscount ? "offer-title" : "special-offers-page-title"}>
-            {offer.title}
-          </h5>
+      <div className={prefix}>
+        {/* منطقة الصورة */}
+        <div className={`${prefix}-img-wrapper`}>
+          {showDiscount && type !== "product" ? (
+            <Link
+              to={`/special-offers/${offer.id}`}
+              onMouseEnter={() => setImageIndex(1)}
+              onMouseLeave={() => setImageIndex(0)}
+            >
+              <img className="offer-image" src={currentImage} alt={offer.title} />
+            </Link>
+          ) : (
+            <img className={`${prefix}-img`} src={currentImage} alt={offer.title} />
+          )}
+
+          {/* مصغرات الصور في صفحة العرض الخاص */}
+          {!showDiscount && !type && offer.images && (
+            <div className="special-offers-page-select">
+              {offer.images.map((img, index) => (
+                <img
+                  key={index}
+                  onClick={() => setImageIndex(index)}
+                  className={`select-img ${imageIndex === index ? "active" : ""}`}
+                  src={img}
+                  alt=""
+                />
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* معلومات المنتج */}
+        <div className={`${prefix}-info`}>
+          <h5 className={`${prefix}-title`}>{offer.title}</h5>
           <Rating rating={offer.rating} reviews={offer.reviews} />
+
           <div className={showDiscount ? "offer-price" : "offer-price-page"}>
             {offer.discount ? (
               <>
                 <b className="offer-price-item">${offer.price}</b>
-                <b
-                  className={
-                    showDiscount ? "offer-final-price-item" : "special-offers-final-price-item"
-                  }
-                >
-                  ${finalPrice}
-                </b>
+                <b className={`${prefix}-final-price-item`}>${finalPrice}</b>
               </>
             ) : (
               <b className="special-offer-final-price-item">${offer.price}</b>
             )}
           </div>
+
           {children}
         </div>
+
         {showDiscount && <div className="discount">خصم {offer.discount}%</div>}
       </div>
       {!showDiscount && <ProductDescription />}

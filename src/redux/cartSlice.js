@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const items =
+const cartItems =
   localStorage.getItem("cartItems") !== null ? JSON.parse(localStorage.getItem("cartItems")) : [];
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartItems: items,
+    cartItems,
   },
   reducers: {
     // إضافة منتج للسلة
@@ -14,7 +14,7 @@ const cartSlice = createSlice({
       if (itemExists) {
         itemExists.quantity = +itemExists.quantity + +action.payload.quantity; // إذا كان موجوداً، نزيد الكمية فقط
       } else {
-        state.cartItems.push({ ...action.payload });
+        state.cartItems.push(action.payload );
       }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },

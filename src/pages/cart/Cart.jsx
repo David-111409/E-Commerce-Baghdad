@@ -18,7 +18,7 @@ const Cart = () => {
         </Link>
       </div>
     );
-   
+
   return (
     <div className="cart">
       <h1 className="cart-title">سله التسوق</h1>
