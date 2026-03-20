@@ -9,22 +9,24 @@ import { useEffect } from "react";
 import { fetchProducts } from "../../redux/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Spinner from "../../components/spinner/Spinner";
+
 const Home = () => {
   const dispatch = useDispatch();
- 
+
   const { items, loading, error } = useSelector((state) => state.products);
+
   useEffect(() => {
-    
     if (items.length === 0) {
       dispatch(fetchProducts());
     }
-   
   }, [dispatch, items]);
 
   if (loading) return <Spinner />;
+
   if (error) return <div>Error: {error}</div>;
 
   const laptops = items.filter((pro) => pro.category === "laptops");
+
   const mobiles = items.filter((pro) => pro.category === "mobiles");
 
   return (
@@ -33,7 +35,7 @@ const Home = () => {
       <Banner />
       <Category />
       {loading ? (
-        <Spinner /> 
+        <Spinner />
       ) : (
         <>
           <SpecialOffers />

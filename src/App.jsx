@@ -20,10 +20,9 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    
-      dispatch(fetchProducts());
-    
+    dispatch(fetchProducts());
   }, [dispatch]);
+  
   return (
     <Provider store={store}>
       <ScrollToTop />
@@ -35,7 +34,7 @@ const App = () => {
         <Route path="/special-offers/:id" element={<SingleOfferPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
-        <Route  path="/products" element ={<Products />}/>
+        <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<SingleProduct />} />
       </Routes>
       <Footer />
